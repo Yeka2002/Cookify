@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LoginActivity">
+
+    <!-- Guías para centrar los elementos -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/ivLogoLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logocookify" />
+
+    <TextView
+        android:id="@+id/tvTituloLogin"
+        style="@style/fuenteGeneral"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:text="@string/ac1_titulo_inicio_sesion"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogoLogin" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiEmailLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:hint="@string/prompt_email"
+        app:layout_constraintEnd_toStartOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloLogin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_receta_post"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiContrasenaLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:hint="@string/prompt_password"
+        app:layout_constraintEnd_toStartOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@id/tiEmailLogin"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etContrasenaLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_receta_post"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_3sdp"
+        android:text="@string/btn_iniciar_sesion"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/tiContrasenaLogin" />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:text="@string/btn_registrarse"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/tiContrasenaLogin" />
+
+    <TextView
+        android:id="@+id/tvMasInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_adicional1"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/tvOlvidaContrasena" />
+
+    <TextView
+        android:id="@+id/tvOlvidaContrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/txt_adicional2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/btnIniciarSesion" />
+
+    <TextView
+        android:id="@+id/tvAvisoLegal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_adicional3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/tvOlvidaContrasena" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="16dp"/> <!-- Ajusta el valor para redondear más o menos las esquinas -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/gris" /> <!-- Cambia el color del borde según tus necesidades -->
+</shape>

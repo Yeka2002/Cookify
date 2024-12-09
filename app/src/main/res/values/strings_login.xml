@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="ac1_titulo_inicio_sesion">¡Bienvenido a Cookify!</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="btn_iniciar_sesion">INICIAR SESIÓN</string>
+    <string name="btn_registrarse">REGISTRARSE</string>
+    <string name="txt_adicional1">Más información</string>
+    <string name="txt_adicional2">¿Has olvidado tu contraseña?</string>
+    <string name="txt_adicional3">Aviso legal</string>
+
+    <!-- Errores -->
+    <string name="txt_error_email">Ingresa un email valido</string>
+    <string name="txt_error_password">Ingresa una contraseña valida</string>
+    <string name="error_user_not_found">Usuario no registrado.</string>
+    <string name="error_invalid_password">Contraseña incorrecta.</string>
+    <string name="error_user_exists">El usuario ya está registrado.</string>
+    <string name="error_weak_password">Contraseña débil.</string>
+    <string name="error_unknown">Error desconocido.</string>
+
+    <!-- Modal error -->
+    <string name="txt_modal">¡Ups! Algo ha ido mal, intenta iniciar sesión más tarde.</string>
+    <string name="btn_modal">OK</string>
+
+    <!-- Recuperar contraseña -->
+    <string name="txt_modal_rc">Introduce tu email en el campo "Email" para enviarte un correo.</string>
+
+</resources>

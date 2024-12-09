@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color.primario">#3F51B5</color>
+    <color name="color.primario.b">#79BD3B12</color>
+    <color name="color.secundario">#bbd8b3</color>
+    <color name="color.aviso">#FFFFFF</color>
+    <color name="color.correcto">#37953B</color>
+    <color name="color.negativo">#CC1911</color>
+    <color name="color.positivo">#166270</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="trasparente">#00510A0A</color>
+
+    <color name="gris">#AFABAB</color>
+    <color name="colorOverlay">#80000000</color>
+
+</resources>

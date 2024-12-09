@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_20sdp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <com.example.cookify.componentes.ComponenteImagenRedondeada
+        android:id="@+id/componenteImagenRedondeadaPost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/fuenteGeneral"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="iek_cooked"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintStart_toEndOf="@+id/componenteImagenRedondeadaPost"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/fuenteSuplente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pasta"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/fuenteSuplente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pasta al Pesto"
+        app:layout_constraintBottom_toBottomOf="@+id/componenteImagenRedondeadaPost"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/ic_category"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/ic_fastfood"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_account_box_24dp" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/postCarrusel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:background="@drawable/borde_receta_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/componenteImagenRedondeadaPost"
+        tools:ignore="MissingConstraints"
+        tools:itemCount="5">
+
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <LinearLayout
+        android:id="@+id/lyObjetos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postCarrusel"
+        android:background="@color/color.primario"
+        android:paddingVertical="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/ivComentar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_options_24dp" />
+
+        <ImageView
+            android:id="@+id/ivDenunciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_bad"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/fuenteGeneral"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:text="Ricos macarrones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyObjetos" />
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/fuenteSuplente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/_8sdp"
+        android:text="Me quedó muy bien..."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

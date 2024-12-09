@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textPublicaciones">Publicaciones</string>
+    <string name="textSeguidores">Seguidores</string>
+    <string name="btnEdtPer">Editar perfil</string>
+    <string name="btnAjustes">Ajustes</string>
+</resources>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.RegistroActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineInferior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/ivLogoRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logocookify" />
+
+    <TextView
+        android:id="@+id/tvTituloRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_registro"
+        android:layout_margin="@dimen/_8sdp"
+        style="@style/fuenteGeneral"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogoRegistro" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiNombreRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:hint="@string/usuario_registro"
+        app:layout_constraintEnd_toStartOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloRegistro">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNombreRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_receta_post"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiEmailRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:hint="@string/usuario_email"
+        app:layout_constraintEnd_toStartOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@id/tiNombreRegistro">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmailRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_receta_post"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiContrasenaRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:hint="@string/usuario_contrasena"
+        app:layout_constraintEnd_toStartOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@id/tiEmailRegistro"
+        app:endIconMode="password_toggle"
+        app:errorTextAppearance="@style/ErrorTextStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etContrasenaRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_receta_post"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiRepContrasenaRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:hint="@string/usuario_rep_contrasena"
+        app:layout_constraintEnd_toStartOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@id/tiContrasenaRegistro"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCRepontrasenaRegistro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_receta_post"
+            android:inputType="textPassword"
+            app:errorTextAppearance="@style/ErrorTextStyle"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btnAceptarRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_3sdp"
+        android:text="ACEPTAR"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineInferior"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/tiRepContrasenaRegistro" />
+
+    <Button
+        android:id="@+id/btnCancelarRegistro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_3sdp"
+        android:text="CANCELAR"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineInferior"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/tiRepContrasenaRegistro" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

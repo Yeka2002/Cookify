@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.perfil.ModificarPerfilActivity">
+
+    <!-- Guías para centrar los elementos -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineMd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+
+    <com.example.cookify.componentes.ComponenteImagenRedondeada
+        android:id="@+id/componenteImagenRedondeada2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineMd1"
+        app:layout_constraintEnd_toEndOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="@+id/guidelineDown"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="@+id/guidelineMd1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEditarNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_receta_post"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutDescripcion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Descripción"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNombre">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEditarDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_receta_post"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:maxLength="300" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Switch
+        android:id="@+id/swPrivacidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="¿Deseas que tu cuenta sea privada?"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineMd2"
+        app:layout_constraintEnd_toEndOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutDescripcion"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Button
+        android:id="@+id/btnGuardarPerfil"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="GUARDAR"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineUp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="@+id/guidelineMd2" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTituloReceta"
+        style="@style/fuenteGeneralBlanco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar perfil"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
+        app:layout_constraintStart_toStartOf="@+id/toolbar4"
+        app:layout_constraintTop_toTopOf="@+id/toolbar4"
+        tools:ignore="MissingConstraints" />
+
+
+    <ImageView
+        android:id="@+id/ivCerrarGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="@+id/toolbar4"
+        app:srcCompat="@drawable/ic_back" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

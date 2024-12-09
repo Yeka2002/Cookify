@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/main"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        style="@style/fuenteGeneralPrimario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comentarios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvComentarios"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etComentario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/border_usuario_buscar"
+        android:hint="Añadir un comentario"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnEnviarComentario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvComentarios" />
+
+    <Button
+        android:id="@+id/btnEnviarComentario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        app:layout_constraintBottom_toBottomOf="@+id/etComentario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etComentario" />
+
+    <ImageView
+        android:id="@+id/ivNoComentarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/etComentario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_edit_note_24"
+        app:tint="@color/color.primario" />
+
+    <TextView
+        android:id="@+id/tvNoComentarios"
+        style="@style/fuenteGeneralPrimario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Este post no tiene comentarios"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/etComentario"
+        app:layout_constraintEnd_toEndOf="@+id/ivNoComentarios"
+        app:layout_constraintStart_toStartOf="@+id/ivNoComentarios"
+        app:layout_constraintTop_toBottomOf="@+id/ivNoComentarios" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

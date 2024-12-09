@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "321458758761",
+    "project_id": "cookify-d861b",
+    "storage_bucket": "cookify-d861b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321458758761:android:213c7883df0737079f6ef8",
+        "android_client_info": {
+          "package_name": "com.example.cookify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDZrWZNwKFW-tb9oxrQgJA75vrp2sxmus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

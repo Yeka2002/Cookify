@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.inicio.TemporadasActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarRecetaApi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTituloReceta"
+        style="@style/fuenteGeneralBlanco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbarRecetaApi"
+        app:layout_constraintEnd_toEndOf="@+id/toolbarRecetaApi"
+        app:layout_constraintStart_toStartOf="@+id/toolbarRecetaApi"
+        app:layout_constraintTop_toTopOf="@+id/toolbarRecetaApi"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ivCerrarReceta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTituloReceta"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="@+id/tvTituloReceta"
+        app:srcCompat="@drawable/ic_back" />
+
+    <ScrollView
+        android:id="@+id/scrollDetalles"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRecetaApi">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivReceta"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"/>
+
+            <!-- Video de YouTube -->
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/youtubePlayerView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideCentro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    style="@style/fuenteGeneralPrimario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_20sdp"
+                    android:text="Ingredientes"
+                    app:layout_constraintStart_toStartOf="@+id/guideD"
+                    app:layout_constraintTop_toBottomOf="@+id/tvElaboracion"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i1"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintStart_toStartOf="@+id/textView13"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c1"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i1"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i2"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i1"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c2"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i2"
+                    tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/i3"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/i1"
+                    app:layout_constraintTop_toBottomOf="@+id/i1"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c3"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i3"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i4"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toBottomOf="@+id/i2"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c4"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i4"
+                    tools:ignore="MissingConstraints" />
+
+
+
+
+
+                <TextView
+                    android:id="@+id/i5"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/i3"
+                    app:layout_constraintTop_toBottomOf="@+id/i3"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c5"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i5"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i6"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toBottomOf="@+id/i4"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c6"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i6"
+                    tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/i7"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/i5"
+                    app:layout_constraintTop_toBottomOf="@+id/i5"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c7"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i7"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i8"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toBottomOf="@+id/i6"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c8"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i8"
+                    tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/i9"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/i7"
+                    app:layout_constraintTop_toBottomOf="@+id/i7"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c9"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i9"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i10"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toBottomOf="@+id/i8"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c10"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i10"
+                    tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/i11"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/i9"
+                    app:layout_constraintTop_toBottomOf="@+id/i9"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c11"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i11"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i12"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toBottomOf="@+id/i10"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c12"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i12"
+                    tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/i13"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/i11"
+                    app:layout_constraintTop_toBottomOf="@+id/i11"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c13"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i13"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i14"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toBottomOf="@+id/i12"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c14"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i14"
+                    tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/i15"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/i13"
+                    app:layout_constraintTop_toBottomOf="@+id/i13"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c15"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i15"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i16"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toBottomOf="@+id/i14"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c16"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i16"
+                    tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/i17"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/i15"
+                    app:layout_constraintTop_toBottomOf="@+id/i15"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c17"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i17"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i18"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toBottomOf="@+id/i16"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c18"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i18"
+                    tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+
+                <TextView
+                    android:id="@+id/i19"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/i17"
+                    app:layout_constraintTop_toBottomOf="@+id/i17"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/c19"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toTopOf="@+id/i19"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/i20"
+                    style="@style/fuenteSuplenteNegraMinBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/guideCentro"
+                    app:layout_constraintTop_toBottomOf="@+id/i18"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginStart="@dimen/_10sdp"/>
+
+                <TextView
+                    android:id="@+id/c20"
+                    style="@style/fuenteSuplenteNegraMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintTop_toTopOf="@+id/i20"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                    app:layout_constraintStart_toEndOf="@+id/textView13"
+                    app:layout_constraintTop_toTopOf="@+id/textView13"
+                    app:srcCompat="@drawable/ic_fastfood"
+                    app:tint="@color/color.primario" />
+
+                <TextView
+                    android:id="@+id/tvTituloElaboracion"
+                    style="@style/fuenteGeneralPrimario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_20sdp"
+                    android:text="Elaboración"
+                    app:layout_constraintStart_toStartOf="@+id/guideD"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvTituloElaboracion"
+                    app:layout_constraintStart_toEndOf="@+id/tvTituloElaboracion"
+                    app:layout_constraintTop_toTopOf="@+id/tvTituloElaboracion"
+                    app:srcCompat="@drawable/ic_instructions"
+                    app:tint="@color/color.primario" />
+
+                <TextView
+                    android:id="@+id/tvElaboracion"
+                    style="@style/fuenteSuplente"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintStart_toStartOf="@+id/guideD"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTituloElaboracion" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    style="@style/fuenteGeneralPrimario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TheMealDB®"
+                    app:layout_constraintTop_toBottomOf="@id/c20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideI"
+                    app:layout_constraintStart_toStartOf="@+id/guideD" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titulo_registro">¡Regístrate en Cookify!</string>
+    <string name="usuario_registro">Nombre de usuario</string>
+    <string name="usuario_email">Email</string>
+    <string name="usuario_contrasena">Contraseña</string>
+    <string name="usuario_rep_contrasena">Repite la contraseña</string>
+
+    <!-- Errores -->
+    <string name="reg_fallo1">Fallo en los servidores de Cookify, inténtelo más tarde...</string>
+    <string name="reg_fallo2">Las contraseñas no son iguales</string>
+    <string name="reg_fallo3">El nombre está vacío</string>
+
+
+</resources>

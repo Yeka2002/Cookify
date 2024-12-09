@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_perfil">
+
+    <fragment
+        android:id="@+id/navigation_inicio"
+        android:name="com.example.cookify.ui.inicio.InicioFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_navigation_inicio_to_navigation_crear"
+            app:destination="@id/navigation_crear" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_buscar"
+        android:name="com.example.cookify.ui.buscar.BuscarFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_buscar" >
+        <action
+            android:id="@+id/action_navigation_buscar_to_navigation_perfil"
+            app:destination="@id/navigation_perfil" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_crear"
+        android:name="com.example.cookify.ui.crear.CrearFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_crear" >
+        <action
+            android:id="@+id/action_navigation_crear_to_navigation_buscar"
+            app:destination="@id/navigation_buscar" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_perfil"
+        android:name="com.example.cookify.ui.perfil.PerfilFragment"
+        android:label="@string/title_cuenta"
+        tools:layout="@layout/fragment_perfil" />
+</navigation>

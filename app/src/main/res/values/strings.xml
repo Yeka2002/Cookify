@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Cookify</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_search">Buscar</string>
+    <string name="title_notifications">Crear</string>
+    <string name="title_cuenta">Cuenta</string>
+    <string name="descripcion">descripcion</string>
+
+    <!-- Generales -->
+    <string name="general_titulo_aceptar">Aceptar</string>
+    <string name="general_titulo_borrar">Borrar</string>
+    <string name="general_titulo_modificar">Modificar</string>
+    <string name="general_titulo_cancelar">Aceptar</string>
+
+    <!-- Modales -->
+    <string name="confirmar_salir">SÍ</string>
+    <string name="pregunta_salir">¿Desea cerrar sesión?</string>
+    <string name="cancelar">NO</string>
+
+
+</resources>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_refresh_layout_perfil"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.perfil.PerfilFragment"
+        android:id="@+id/layoutPerfil">
+
+
+
+        <!-- Botón de cerrar sesión -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivOpciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/descripcion"
+            android:src="@drawable/ic_dehaze"
+            app:backgroundTint="@color/white"
+
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+
+
+        <!-- Guías para centrar los elementos -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineIzq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineDer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+
+        <!-- Foto de perfil con marco redondo -->
+        <com.example.cookify.componentes.ComponenteImagenRedondeada
+            android:id="@+id/componenteImagenRedondeada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_16sdp"
+            app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+
+        <TextView
+            android:id="@+id/textNumPublicaciones"
+            style="@style/fuenteGeneral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintBottom_toTopOf="@+id/textPublicaciones"
+            app:layout_constraintEnd_toEndOf="@+id/textPublicaciones"
+            app:layout_constraintStart_toStartOf="@+id/textPublicaciones" />
+
+        <TextView
+            android:id="@+id/textPublicaciones"
+            style="@style/fuenteSuplente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textPublicaciones"
+            app:layout_constraintBottom_toBottomOf="@+id/componenteImagenRedondeada"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+            app:layout_constraintStart_toEndOf="@+id/componenteImagenRedondeada" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPosts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintTop_toBottomOf="@+id/componenteImagenRedondeada" />
+
+        <TextView
+            android:id="@+id/textNombrePerfil"
+            style="@style/fuenteGeneralBlanco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
+            app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+            app:layout_constraintTop_toTopOf="@+id/toolbar3" />
+
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/grdRecetas"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/ivPrivacidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@+id/textNombrePerfil"
+            app:layout_constraintBottom_toBottomOf="@+id/textNombrePerfil"
+            app:layout_constraintStart_toEndOf="@+id/textNombrePerfil"
+            app:srcCompat="@drawable/ic_disabled_visible"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/ivNoRecetas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+            app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+            app:srcCompat="@drawable/ic_image_not_supported"
+            app:tint="@color/color.primario" />
+
+        <TextView
+            android:id="@+id/tvNoRecetas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/fuenteGeneralPrimario"
+            android:text="No hay recetas"
+            app:layout_constraintEnd_toEndOf="@+id/ivNoRecetas"
+            app:layout_constraintStart_toStartOf="@+id/ivNoRecetas"
+            app:layout_constraintTop_toBottomOf="@+id/ivNoRecetas" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

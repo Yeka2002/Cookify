@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.crear.CrearFragment">
+
+    <!-- Guías para centrar los elementos -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineIzq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineDer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nueva publicación"
+        android:layout_marginTop="@dimen/_20sdp"
+        style="@style/fuenteGeneralPrimario"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textTituloPost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_25sdp"
+        android:hint="Título"
+        app:layout_constraintEnd_toStartOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTituloPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_receta_post"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textDescripcionPost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        android:hint="Descripción"
+        app:layout_constraintEnd_toStartOf="@id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@id/guidelineIzq"
+        app:layout_constraintTop_toBottomOf="@+id/textTituloPost">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDescripcionPost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:background="@drawable/borde_receta_post"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Spinner
+        android:id="@+id/spinnerCategoria"
+        style="@style/SpinnerPers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/textDescripcionPost" />
+
+    <Spinner
+        android:id="@+id/spinnerComida"
+        style="@style/SpinnerPers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_8sdp"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCategoria" />
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/crearCarrusel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerComida"
+        tools:ignore="MissingConstraints"
+        tools:itemCount="5"/>
+
+    <ImageView
+        android:id="@+id/ivAbrirCamara"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:src="@drawable/ic_add_photo_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/crearCarrusel"
+        app:layout_constraintStart_toStartOf="@+id/crearCarrusel"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerComida"
+        app:tint="@color/color.primario" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerComida"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ivCancelarPublicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete_forever"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:tint="@color/color.negativo" />
+
+    <ImageView
+        android:id="@+id/ivPublicar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineDer"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        app:tint="@color/color.correcto" />
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/fuenteGeneralPrimario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerCategoria"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:layout_constraintTop_toTopOf="@+id/spinnerCategoria" />
+
+    <TextView
+        android:id="@+id/textView10"
+        style="@style/fuenteGeneralPrimario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receta"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerComida"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalCenter"
+        app:layout_constraintStart_toEndOf="@+id/imageView13"
+        app:layout_constraintTop_toTopOf="@+id/spinnerComida" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_category"
+        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="@+id/textView9"
+        app:layout_constraintVertical_bias="1.0"
+        app:tint="@color/color.primario" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_fastfood"
+        app:layout_constraintBottom_toBottomOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/guidelineIzq"
+        app:layout_constraintTop_toTopOf="@+id/textView10"
+        app:tint="@color/color.primario"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
